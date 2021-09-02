@@ -6,6 +6,7 @@ module Chainweb.Api.CommandResult where
 ------------------------------------------------------------------------------
 import           Data.Aeson
 import           Data.Text (Text)
+import           Data.Time.Clock.POSIX
 ------------------------------------------------------------------------------
 import Chainweb.Api.PactTypes
 import Chainweb.Api.ChainwebMeta
@@ -13,7 +14,7 @@ import Chainweb.Api.ChainwebMeta
 
 data ResultMetaData = ResultMetaData
   { _resultMetaData_chainwebMeta  :: Maybe ChainwebMeta  -- only on locals
-  , _resultMetaData_blockTime     :: Text
+  , _resultMetaData_blockTime     :: POSIXTime
   , _resultMetaData_blockHash     :: Maybe Text   -- only on send
   , _resultMetaData_prevBlockHash :: Text
   , _resultMetaData_blockHeight   :: Int
